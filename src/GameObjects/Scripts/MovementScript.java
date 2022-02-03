@@ -28,12 +28,14 @@ public class MovementScript extends Script {
         double g = 1.75;
         double jump = 0.65;
 
-        Game.getGame().getCamera().setCameraPosition(((Position)getObject().getComponent("Position")).getPosition());
 
         double ySpeed=((Speed)getObject().getComponent("Speed")).getSpeedVec().y();
         double xSpeed=((Speed)getObject().getComponent("Speed")).getSpeedVec().x();
 
         if(playerScript) {
+
+            Game.getGame().getCamera().setCameraPosition(((Position)getObject().getComponent("Position")).getPosition());
+
             if (Keyboard.isKeyPressed(KeyEvent.VK_A)) {
                 xSpeed += -speed * delta;
             }
